@@ -25,7 +25,7 @@ export const ApplicationViews = () => {
                             <LocationList />
                         </Route>
 
-                        <Route path="/locations/:locationId(\d+)" render={
+                        <Route path="/locations/:location_id(\d+)" render={
                             props => <LocationDetail {...props} />
                         } />
                     </AnimalProvider>

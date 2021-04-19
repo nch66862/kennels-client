@@ -31,7 +31,7 @@ export const EmployeeDetail = (props) => {
     }, [employees])
 
     useEffect(() => {
-        const location = locations.find(l => l.id === employee.locationId) || {}
+        const location = locations.find(l => l.id === employee.location_id) || {}
         setLocation(location)
     }, [locations])
 

@@ -35,15 +35,15 @@ export const EmployeeForm = (burrito) => {
             can't just ask for the `.value` property directly,
             but rather `.current.value` now in React.
         */
-        const locationId = parseInt(location.current.value)
+        const location_id = parseInt(location.current.value)
         const animalId = parseInt(animal.current.value)
 
-        if (locationId === 0) {
+        if (location_id === 0) {
             window.alert("Please select a location")
         } else {
             addEmployee({
                 name: name.current.value,
-                locationId,
+                location_id,
                 animalId
             })
             .then(() => burrito.history.push("/employees"))

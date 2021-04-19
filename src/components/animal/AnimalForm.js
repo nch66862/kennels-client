@@ -52,9 +52,9 @@ export const AnimalForm = (props) => {
 
 
     const constructNewAnimal = () => {
-        const locationId = parseInt(animal.locationId)
+        const location_id = parseInt(animal.location_id)
 
-        if (locationId === 0) {
+        if (location_id === 0) {
             window.alert("Please select a location")
         } else {
             if (editMode) {
@@ -63,9 +63,9 @@ export const AnimalForm = (props) => {
                     id: animal.id,
                     name: animal.name,
                     breed: animal.breed,
-                    locationId: locationId,
-                    treatment: animal.treatment,
-                    customerId: parseInt(localStorage.getItem("kennel_customer"))
+                    location_id: location_id,
+                    status: animal.status,
+                    customer_id: parseInt(localStorage.getItem("kennel_customer"))
                 })
                     .then(() => props.history.push("/animals"))
             } else {
@@ -73,9 +73,9 @@ export const AnimalForm = (props) => {
                 addAnimal({
                     name: animal.name,
                     breed: animal.breed,
-                    locationId: locationId,
-                    treatment: animal.treatment,
-                    customerId: parseInt(localStorage.getItem("kennel_customer"))
+                    location_id: location_id,
+                    status: animal.status,
+                    customer_id: parseInt(localStorage.getItem("kennel_customer"))
                 })
                     .then(() => props.history.push("/animals"))
             }
@@ -107,9 +107,9 @@ export const AnimalForm = (props) => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="locationId">Location: </label>
-                    <select name="locationId" className="form-control"
-                        value={animal.locationId}
+                    <label htmlFor="location_id">Location: </label>
+                    <select name="location_id" className="form-control"
+                        value={animal.location_id}
                         onChange={handleControlledInputChange}>
 
                         <option value="0">Select a location</option>
@@ -123,9 +123,9 @@ export const AnimalForm = (props) => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="treatment">Treatments: </label>
-                    <textarea type="text" name="treatment" className="form-control"
-                        value={animal.treatment}
+                    <label htmlFor="status">Status: </label>
+                    <textarea type="text" name="status" className="form-control"
+                        value={animal.status}
                         onChange={handleControlledInputChange}>
                     </textarea>
                 </div>
